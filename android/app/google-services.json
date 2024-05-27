@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "345189300729",
+    "project_id": "masjid-b8040",
+    "storage_bucket": "masjid-b8040.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:345189300729:android:73ef9c2d4da2c05fda6528",
+        "android_client_info": {
+          "package_name": "me.adiltapadar.masjidtv.masjid_tv"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD90Y5_wYqLCoArFOLWn6HcoxWki-AlSdg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
