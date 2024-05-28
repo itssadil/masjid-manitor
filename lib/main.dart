@@ -9,6 +9,7 @@ import 'package:masjid_tv/providers/stepperProvider.dart';
 import 'package:masjid_tv/providers/timeListView.dart';
 import 'package:masjid_tv/providers/toDoProvider.dart';
 import 'package:masjid_tv/screens/accountScreen.dart';
+import 'package:masjid_tv/services/googleSignInProvider.dart';
 import 'package:provider/provider.dart';
 
 void main() async {
@@ -29,6 +30,7 @@ void main() async {
             create: (context) => DarkModeProvider()..initialize()),
         ChangeNotifierProvider(create: (context) => ToDoProvider()),
         ChangeNotifierProvider(create: (context) => HadisProvider()),
+        ChangeNotifierProvider(create: (context) => GoogleSignInProvider()),
         ChangeNotifierProvider(create: (context) => HadisTimer()),
         ChangeNotifierProvider(create: (context) => FridayHadisProvider()),
         ChangeNotifierProvider(create: (context) => DonationProvider()),
