@@ -8,7 +8,7 @@ import 'package:masjid_tv/providers/hadisTimer.dart';
 import 'package:masjid_tv/providers/stepperProvider.dart';
 import 'package:masjid_tv/providers/timeListView.dart';
 import 'package:masjid_tv/providers/toDoProvider.dart';
-import 'package:masjid_tv/screens/accountScreen.dart';
+import 'package:masjid_tv/screens/loginScreen/accountScreen.dart';
 import 'package:masjid_tv/services/googleSignInProvider.dart';
 import 'package:provider/provider.dart';
 

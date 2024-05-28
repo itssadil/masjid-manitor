@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:masjid_tv/sections/namazTimeGrid.dart';
-import 'package:masjid_tv/sections/timerScreen.dart';
+import 'package:masjid_tv/screens/homeScreen/sections/namazTimeGrid.dart';
+import 'package:masjid_tv/screens/homeScreen/sections/timerScreen.dart';
 
 class NamazTime extends StatefulWidget {
   const NamazTime({Key? key}) : super(key: key);

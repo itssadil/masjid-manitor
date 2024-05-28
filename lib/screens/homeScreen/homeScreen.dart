@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:masjid_tv/sections/clockSection.dart';
-import 'package:masjid_tv/sections/namazTime.dart';
+import 'package:masjid_tv/screens/homeScreen/sections/clockSection.dart';
+import 'package:masjid_tv/screens/homeScreen/sections/namazTime.dart';
 import 'package:masjid_tv/widgets/myDrawer.dart';
 
 class HomeScreen extends StatelessWidget {
