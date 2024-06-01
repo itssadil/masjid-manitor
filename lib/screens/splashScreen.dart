@@ -1,7 +1,31 @@
-import 'package:flutter/material.dart';
+import 'dart:async';
 
-class SplashScreen extends StatelessWidget {
+import 'package:flutter/material.dart';
+import 'package:masjid_tv/screens/loginScreen/LoginScreen.dart';
+
+class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
+
+  @override
+  State<SplashScreen> createState() => _SplashScreenState();
+}
+
+class _SplashScreenState extends State<SplashScreen> {
+  @override
+  void initState() {
+    super.initState();
+    Timer.periodic(Duration(seconds: 3), (_) => navigateToHome(_));
+  }
+
+  void navigateToHome(Timer timer) {
+    Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(builder: (context) {
+        return LoginScreen();
+      }),
+    );
+    timer.cancel();
+  }
 
   @override
   Widget build(BuildContext context) {

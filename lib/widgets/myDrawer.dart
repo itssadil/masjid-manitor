@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:masjid_tv/providers/darkModeProvider.dart';
 import 'package:masjid_tv/providers/donationProvider.dart';
@@ -201,9 +202,35 @@ class _MyDrawerState extends State<MyDrawer> {
           ),
           Divider(),
           ListTile(
-            title: Text("Log Out"),
+            title: Text("Sign Out"),
             trailing: Icon(Icons.logout),
-            onTap: () {},
+            onTap: () {
+              showDialog(
+                context: context,
+                builder: (context) => AlertDialog(
+                  title: Row(
+                    children: [
+                      Icon(Icons.logout),
+                      Text("Sign out"),
+                    ],
+                  ),
+                  content: const Text("Do you wanna signout?"),
+                  actions: [
+                    ElevatedButton(
+                      onPressed: () {
+                        FirebaseAuth.instance.signOut();
+                        Navigator.pop(context);
+                      },
+                      child: const Text("Sign Out"),
+                    ),
+                    ElevatedButton(
+                      onPressed: () => Navigator.pop(context),
+                      child: const Text("Cancel"),
+                    ),
+                  ],
+                ),
+              );
+            },
           ),
           SizedBox(height: 20),
         ],

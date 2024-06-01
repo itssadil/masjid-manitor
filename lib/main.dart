@@ -5,10 +5,11 @@ import 'package:masjid_tv/providers/donationProvider.dart';
 import 'package:masjid_tv/providers/fridayHadisProvider.dart';
 import 'package:masjid_tv/providers/hadisProvider.dart';
 import 'package:masjid_tv/providers/hadisTimer.dart';
+import 'package:masjid_tv/providers/passVisible.dart';
 import 'package:masjid_tv/providers/stepperProvider.dart';
 import 'package:masjid_tv/providers/timeListView.dart';
 import 'package:masjid_tv/providers/toDoProvider.dart';
-import 'package:masjid_tv/screens/loginScreen/accountScreen.dart';
+import 'package:masjid_tv/screens/splashScreen.dart';
 import 'package:masjid_tv/services/googleSignInProvider.dart';
 import 'package:provider/provider.dart';
 
@@ -31,6 +32,7 @@ void main() async {
         ChangeNotifierProvider(create: (context) => ToDoProvider()),
         ChangeNotifierProvider(create: (context) => HadisProvider()),
         ChangeNotifierProvider(create: (context) => GoogleSignInProvider()),
+        ChangeNotifierProvider(create: (context) => PassVisible()),
         ChangeNotifierProvider(create: (context) => HadisTimer()),
         ChangeNotifierProvider(create: (context) => FridayHadisProvider()),
         ChangeNotifierProvider(create: (context) => DonationProvider()),
@@ -54,7 +56,7 @@ class MyApp extends StatelessWidget {
       themeMode: darkModeProvider.themeMode,
       theme: MyThemes.lightTheme,
       darkTheme: MyThemes.darkTheme,
-      home: const AccountScreen(),
+      home: const SplashScreen(),
     );
   }
 }

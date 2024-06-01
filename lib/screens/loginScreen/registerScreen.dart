@@ -4,14 +4,9 @@ import 'package:masjid_tv/providers/stepperProvider.dart';
 import 'package:masjid_tv/screens/loginScreen/loginUi/loginUi.dart';
 import 'package:provider/provider.dart';
 
-class AccountScreen extends StatefulWidget {
-  const AccountScreen({Key? key}) : super(key: key);
+class RegisterScreen extends StatelessWidget {
+  const RegisterScreen({Key? key}) : super(key: key);
 
-  @override
-  State<AccountScreen> createState() => _AccountScreenState();
-}
-
-class _AccountScreenState extends State<AccountScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -78,7 +73,44 @@ class _AccountScreenState extends State<AccountScreen> {
         state: currentStep > 0 ? StepState.complete : StepState.indexed,
         isActive: currentStep >= 0,
         title: Text("Account"),
-        content: LogInUi(),
+        content: StreamBuilder(
+          stream: FirebaseAuth.instance.authStateChanges(),
+          builder: (context, snapshot) {
+            if (snapshot.connectionState == ConnectionState.waiting) {
+              return CircularProgressIndicator();
+            } else if (snapshot.hasData) {
+              return Column(
+                children: [
+                  snapshot.data!.photoURL != null
+                      ? CircleAvatar(
+                          backgroundImage:
+                              NetworkImage(snapshot.data!.photoURL!),
+                          radius: 30,
+                        )
+                      : CircleAvatar(
+                          backgroundImage:
+                              AssetImage("assets/images/noProfile.png"),
+                          radius: 30,
+                        ),
+                  Text(
+                    snapshot.data!.displayName ?? "",
+                    style: textStyle(),
+                  ),
+                  Text(
+                    snapshot.data!.email!,
+                  ),
+                ],
+              );
+            } else if (snapshot.hasError) {
+              return Text("Something went wrong!");
+            } else {
+              return LogInUi(
+                alignment: Alignment.topLeft,
+                isLoginPage: false,
+              );
+            }
+          },
+        ),
       ),
       Step(
         state: currentStep > 1 ? StepState.complete : StepState.indexed,
@@ -92,5 +124,12 @@ class _AccountScreenState extends State<AccountScreen> {
         content: Container(),
       ),
     ];
+  }
+
+  textStyle() {
+    return TextStyle(
+      fontWeight: FontWeight.bold,
+      color: Colors.grey.shade700,
+    );
   }
 }
