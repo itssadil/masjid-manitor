@@ -17,7 +17,6 @@ class TextFieldProvider with ChangeNotifier {
       case 1:
         _unitValue = value;
         break;
-        break;
       case 3:
         _cityValue = value;
         break;
