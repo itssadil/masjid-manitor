@@ -7,6 +7,7 @@ import 'package:masjid_tv/providers/hadisProvider.dart';
 import 'package:masjid_tv/providers/hadisTimer.dart';
 import 'package:masjid_tv/providers/passVisible.dart';
 import 'package:masjid_tv/providers/stepperProvider.dart';
+import 'package:masjid_tv/providers/textFieldProvider.dart';
 import 'package:masjid_tv/providers/timeListView.dart';
 import 'package:masjid_tv/providers/toDoProvider.dart';
 import 'package:masjid_tv/screens/splashScreen.dart';
@@ -38,6 +39,7 @@ void main() async {
         ChangeNotifierProvider(create: (context) => DonationProvider()),
         ChangeNotifierProvider(create: (context) => TimeListView()),
         ChangeNotifierProvider(create: (context) => StepperProvider()),
+        ChangeNotifierProvider(create: (context) => TextFieldProvider()),
       ],
       child: const MyApp(),
     ),

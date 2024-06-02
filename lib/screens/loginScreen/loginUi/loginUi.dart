@@ -4,7 +4,7 @@ import 'package:masjid_tv/providers/passVisible.dart';
 import 'package:masjid_tv/screens/loginScreen/LoginScreen.dart';
 import 'package:masjid_tv/screens/loginScreen/registerScreen.dart';
 import 'package:masjid_tv/services/googleSignInProvider.dart';
-import 'package:masjid_tv/widgets/loginTextField.dart';
+import 'package:masjid_tv/widgets/customTextField.dart';
 import 'package:provider/provider.dart';
 
 class LogInUi extends StatefulWidget {
@@ -141,14 +141,14 @@ class _LogInUiState extends State<LogInUi> {
             style: TextStyle(color: Colors.grey.shade700),
           ),
           SizedBox(height: 10),
-          LoginTextField(
+          CustomTextField(
             controller: emailController,
             obscureText: false,
             isSuffix: false,
             labelText: "Email",
           ),
           SizedBox(height: 10),
-          LoginTextField(
+          CustomTextField(
             controller: passwordController,
             obscureText: isPassVisible.isPassVisible,
             isSuffix: true,
@@ -159,7 +159,7 @@ class _LogInUiState extends State<LogInUi> {
             child: Column(
               children: [
                 SizedBox(height: 10),
-                LoginTextField(
+                CustomTextField(
                   controller: confirmPasswordController,
                   obscureText: isPassVisible.isPassVisible,
                   isSuffix: false,
