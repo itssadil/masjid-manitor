@@ -2,9 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:masjid_tv/providers/stepperProvider.dart';
 import 'package:masjid_tv/providers/textFieldProvider.dart';
-import 'package:masjid_tv/screens/homeScreen/homeScreen.dart';
 import 'package:masjid_tv/screens/loginScreen/loginUi/loginUi.dart';
-import 'package:masjid_tv/services/firestoreService.dart';
 import 'package:masjid_tv/widgets/customTextField.dart';
 import 'package:provider/provider.dart';
 
@@ -17,8 +15,6 @@ class RegisterScreen extends StatelessWidget {
   final countryController = TextEditingController();
   final cityController = TextEditingController();
   final zipController = TextEditingController();
-
-  final FirestoreService firestoreService = FirestoreService();
 
   @override
   Widget build(BuildContext context) {
@@ -52,20 +48,8 @@ class RegisterScreen extends StatelessWidget {
                       children: [
                         ElevatedButton(
                           onPressed: () {
-                            if (FirebaseAuth.instance.currentUser != null) {
-                              details.onStepContinue!();
-                              if (isLastStep) {
-                                firestoreService.addInfo(
-                                    FirebaseAuth.instance.currentUser!.uid,
-                                    nameController.text,
-                                    "${unitController.text} ${streetController.text} ${cityController.text} ${countryController.text} ${zipController.text}");
-                                Navigator.pushReplacement(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) => HomeScreen(),
-                                    ));
-                              }
-                            }
+                            // if (FirebaseAuth.instance.currentUser != null)
+                            details.onStepContinue!();
                           },
                           child: Text(
                             isLastStep ? "Conferm" : "Next",
