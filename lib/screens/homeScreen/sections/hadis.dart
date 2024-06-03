@@ -11,57 +11,33 @@ class Hadis extends StatelessWidget {
           isArabic: false,
           hadis:
               "Abu Sa’id al-Khudri reported: The Messenger of Allah, peace and blessings be upon him, said, “There is no prayer after the morning prayer until the sun has risen, and there is no prayer after the afternoon prayer until the sun has set.”",
-          color: Theme.of(context).brightness == Brightness.light
-              ? Colors.tealAccent
-              : null,
-          fontSize: 25,
-          alignment: Alignment.center,
         ),
         CustomCard(
           isArabic: true,
           hadis:
               "عَنْ أَبِي سَعِيدٍ الْخُدْرِيِّ قَالَ قَالَ رَسُولُ اللَّهِ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ لَا صَلَاةَ بَعْدَ الصُّبْحِ حَتَّى تَرْتَفِعَ الشَّمْسُ وَلَا صَلَاةَ بَعْدَ الْعَصْرِ حَتَّى تَغِيبَ الشَّمْسُ",
-          color: Theme.of(context).brightness == Brightness.light
-              ? Colors.tealAccent
-              : null,
-          fontSize: 25,
-          alignment: Alignment.center,
         ),
         CustomCard(
-          isArabic: true,
-          hadis: "Source: Ṣaḥīḥ al-Bukhārī 552, Ṣaḥīḥ Muslim 626",
-          color: Theme.of(context).brightness == Brightness.light
-              ? Colors.green
-              : null,
-          fontSize: 20,
-          alignment: Alignment.centerRight,
+          isArabic: false,
+          hadis:
+              "আবূ সায়ীদ খুদ্‌রী (রাঃ) থেকে বর্ণিত, তিনি বলেন, আমি রাসূলুল্লাহ সাল্লাল্লাহু আলাইহি ওয়াসাল্লাম-কে বলতে শুনেছি যে, ফজরের পর সূর্য উদিত হয়ে (একটু) উপরে না উঠা পর্যন্ত এবং আসরের পর সূর্য অস্তমিত না হওয়া পর্যন্ত কোন সালাত (নামায/নামাজ) নেই।",
         ),
       ],
     );
   }
 
-  CustomCard({
-    required String hadis,
-    required bool isArabic,
-    Color? color,
-    required double fontSize,
-    required AlignmentGeometry alignment,
-  }) {
-    return Align(
-      alignment: alignment,
-      child: Card(
-        margin: EdgeInsets.symmetric(horizontal: 20, vertical: 30),
-        color: color,
-        child: Padding(
-          padding: EdgeInsets.all(10),
-          child: Text(
-            hadis,
-            style: TextStyle(
-              // fontWeight: FontWeight.w600,
-              fontSize: fontSize,
-            ),
-            textAlign: isArabic ? TextAlign.end : TextAlign.start,
+  CustomCard({required String hadis, required bool isArabic}) {
+    return Card(
+      margin: EdgeInsets.symmetric(horizontal: 20, vertical: 30),
+      child: Padding(
+        padding: EdgeInsets.all(10),
+        child: Text(
+          hadis,
+          style: TextStyle(
+            // fontWeight: FontWeight.w600,
+            fontSize: 22,
           ),
+          textAlign: isArabic ? TextAlign.end : TextAlign.start,
         ),
       ),
     );
