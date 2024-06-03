@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:masjid_tv/screens/homeScreen/sections/namazTimeGrid.dart';
 import 'package:masjid_tv/screens/homeScreen/sections/timerScreen.dart';
+
+import 'namazTimeVer.dart';
 
 class NamazTime extends StatefulWidget {
   const NamazTime({Key? key}) : super(key: key);
@@ -146,8 +147,8 @@ class _NamazTimeState extends State<NamazTime> {
         SizedBox(height: 10),
         TimerScreen(hour: hours, minute: minutes, namazName: nextNamaz),
         SizedBox(height: 10),
-        // NamazTimeList(namazTime: namazTime, nextNamaz: nextNamaz),
-        NamazTimeGrid(namazTime: namazTime, nextNamaz: nextNamaz),
+        NamazTimeList(namazTime: namazTime, nextNamaz: nextNamaz),
+        // NamazTimeGrid(namazTime: namazTime, nextNamaz: nextNamaz),
       ],
     );
   }

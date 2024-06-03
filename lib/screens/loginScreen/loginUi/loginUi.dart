@@ -1,7 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:masjid_tv/providers/passVisible.dart';
-import 'package:masjid_tv/screens/homeScreen/homeScreen.dart';
 import 'package:masjid_tv/screens/loginScreen/LoginScreen.dart';
 import 'package:masjid_tv/screens/loginScreen/registerScreen.dart';
 import 'package:masjid_tv/services/googleSignInProvider.dart';
@@ -189,31 +188,18 @@ class _LogInUiState extends State<LogInUi> {
               ),
             ),
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              ElevatedButton(
-                onPressed: widget.isLoginPage ? signUserIn : signUserUp,
-                child: Text(
-                  widget.isLoginPage ? "Login" : "Sign up",
-                  style: TextStyle(color: Colors.white),
-                ),
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.black,
-                ),
-              ),
-              SizedBox(width: 10),
-              ElevatedButton(
-                onPressed: () => Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => HomeScreen(),
-                  ),
-                ),
-                child: Text("Skip"),
-              ),
-            ],
+          ElevatedButton(
+            onPressed: widget.isLoginPage ? signUserIn : signUserUp,
+            child: Text(
+              widget.isLoginPage ? "Login" : "Sign up",
+              style: TextStyle(color: Colors.white),
+            ),
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.black,
+            ),
           ),
+          SizedBox(height: 10),
+          Text("OR"),
           SizedBox(height: 10),
           Consumer<GoogleSignInProvider>(
             builder: (context, value, child) {
