@@ -232,7 +232,7 @@ class _MyDrawerState extends State<MyDrawer> {
               );
             },
           ),
-          SizedBox(height: 20.0),
+          SizedBox(height: 20),
         ],
       ),
     );
