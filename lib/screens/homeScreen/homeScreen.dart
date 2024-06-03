@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:masjid_tv/screens/homeScreen/sections/clockSection.dart';
-import 'package:masjid_tv/screens/homeScreen/sections/namazTime.dart';
+import 'package:masjid_tv/screens/homeScreen/sections/hadis.dart';
 import 'package:masjid_tv/widgets/myDrawer.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -36,10 +36,10 @@ class HomeScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Expanded(flex: 2, child: ClockSection()),
-            Expanded(flex: 3, child: NamazTime()),
+            // Expanded(flex: 3, child: NamazTime()),
             // Expanded(flex: 3, child: Donation()),
             // Expanded(flex: 3, child: FridayToDoList()),
-            // Expanded(flex: 3, child: Hadis()),
+            Expanded(flex: 3, child: Hadis()),
           ],
         ),
       ),
