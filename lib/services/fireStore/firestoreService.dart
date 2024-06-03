@@ -14,7 +14,6 @@ class FirestoreService {
         "uid": uid,
         "name": name,
         "address": address,
-        "timestamp": Timestamp.now(),
       },
     );
   }
